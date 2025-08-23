@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.dslist.dto.GameMinDTO;
-import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.services.GameService;
 
 @RestController
 @RequestMapping(value = "/games")
-public class GameContorller {
+public class GameController {
 
     @Autowired
     private GameService gameService;
