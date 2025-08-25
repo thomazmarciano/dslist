@@ -24,11 +24,13 @@ public class GameService {
         return new GameDTO(result);
     }
 
+    @Transactional(readOnly = true)
     public List<GameMinDTO> findAll() {
         List<Game> result = gameRepository.findAll();
         return result.stream().map(x  -> new GameMinDTO(x)).toList();
     }
 
+    @Transactional(readOnly = true)
     public List<GameMinDTO> findByList(Long listId) {
         List<GameMinProjection> result = gameRepository.searchByList(listId);
         return result.stream().map(x  -> new GameMinDTO(x)).toList();
